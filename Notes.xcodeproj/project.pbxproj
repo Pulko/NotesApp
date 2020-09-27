@@ -7,23 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F48E89625210A40007CF69C /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F48E89525210A40007CF69C /* ToolsView.swift */; };
 		9F57896A2520E9E60031FAC6 /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5789692520E9E60031FAC6 /* NotesApp.swift */; };
 		9F57896C2520E9E60031FAC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57896B2520E9E60031FAC6 /* ContentView.swift */; };
 		9F57896E2520E9E60031FAC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F57896D2520E9E60031FAC6 /* Assets.xcassets */; };
 		9F5789712520E9E60031FAC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5789702520E9E60031FAC6 /* Preview Assets.xcassets */; };
-		9F5789732520E9E60031FAC6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5789722520E9E60031FAC6 /* Persistence.swift */; };
 		9F5789762520E9E60031FAC6 /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F5789742520E9E60031FAC6 /* Notes.xcdatamodeld */; };
+		9F5789802520EB690031FAC6 /* NoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57897F2520EB690031FAC6 /* NoteStore.swift */; };
+		9F5789822520EE600031FAC6 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5789812520EE600031FAC6 /* Note.swift */; };
+		9F5789842520F25B0031FAC6 /* NoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5789832520F25B0031FAC6 /* NoteList.swift */; };
+		9F5789862520F55A0031FAC6 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5789852520F55A0031FAC6 /* NoteCell.swift */; };
+		9F578989252101790031FAC6 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F578988252101790031FAC6 /* Formatter.swift */; };
+		9F57898B252101D00031FAC6 /* NoteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F57898A252101D00031FAC6 /* NoteDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F48E89525210A40007CF69C /* ToolsView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		9F5789662520E9E60031FAC6 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F5789692520E9E60031FAC6 /* NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesApp.swift; sourceTree = "<group>"; };
-		9F57896B2520E9E60031FAC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9F5789692520E9E60031FAC6 /* NotesApp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NotesApp.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
+		9F57896B2520E9E60031FAC6 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		9F57896D2520E9E60031FAC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F5789702520E9E60031FAC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9F5789722520E9E60031FAC6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		9F5789752520E9E60031FAC6 /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		9F5789772520E9E60031FAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F57897F2520EB690031FAC6 /* NoteStore.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NoteStore.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
+		9F5789812520EE600031FAC6 /* Note.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; tabWidth = 2; wrapsLines = 0; };
+		9F5789832520F25B0031FAC6 /* NoteList.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NoteList.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
+		9F5789852520F55A0031FAC6 /* NoteCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
+		9F578988252101790031FAC6 /* Formatter.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
+		9F57898A252101D00031FAC6 /* NoteDetails.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NoteDetails.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +68,11 @@
 		9F5789682520E9E60031FAC6 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				9F578987252101680031FAC6 /* Formatter */,
+				9F57897E2520EB540031FAC6 /* Store */,
+				9F57897D2520EB000031FAC6 /* Main */,
 				9F5789692520E9E60031FAC6 /* NotesApp.swift */,
-				9F57896B2520E9E60031FAC6 /* ContentView.swift */,
 				9F57896D2520E9E60031FAC6 /* Assets.xcassets */,
-				9F5789722520E9E60031FAC6 /* Persistence.swift */,
 				9F5789772520E9E60031FAC6 /* Info.plist */,
 				9F5789742520E9E60031FAC6 /* Notes.xcdatamodeld */,
 				9F57896F2520E9E60031FAC6 /* Preview Content */,
@@ -73,6 +86,35 @@
 				9F5789702520E9E60031FAC6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9F57897D2520EB000031FAC6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9F57896B2520E9E60031FAC6 /* ContentView.swift */,
+				9F5789832520F25B0031FAC6 /* NoteList.swift */,
+				9F5789852520F55A0031FAC6 /* NoteCell.swift */,
+				9F57898A252101D00031FAC6 /* NoteDetails.swift */,
+				9F48E89525210A40007CF69C /* ToolsView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9F57897E2520EB540031FAC6 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				9F57897F2520EB690031FAC6 /* NoteStore.swift */,
+				9F5789812520EE600031FAC6 /* Note.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		9F578987252101680031FAC6 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				9F578988252101790031FAC6 /* Formatter.swift */,
+			);
+			path = Formatter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +186,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F5789732520E9E60031FAC6 /* Persistence.swift in Sources */,
+				9F5789822520EE600031FAC6 /* Note.swift in Sources */,
 				9F57896C2520E9E60031FAC6 /* ContentView.swift in Sources */,
+				9F5789802520EB690031FAC6 /* NoteStore.swift in Sources */,
 				9F57896A2520E9E60031FAC6 /* NotesApp.swift in Sources */,
+				9F48E89625210A40007CF69C /* ToolsView.swift in Sources */,
 				9F5789762520E9E60031FAC6 /* Notes.xcdatamodeld in Sources */,
+				9F5789862520F55A0031FAC6 /* NoteCell.swift in Sources */,
+				9F578989252101790031FAC6 /* Formatter.swift in Sources */,
+				9F57898B252101D00031FAC6 /* NoteDetails.swift in Sources */,
+				9F5789842520F25B0031FAC6 /* NoteList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +333,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Notes.Notes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Pulko.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,7 +355,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Notes.Notes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Pulko.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

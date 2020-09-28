@@ -10,19 +10,17 @@ import SwiftUI
 
 struct ToolsView: View {
 	var body: some View {
-		HStack {
-			GroupBox() {
-				Text("Add")
+			HStack {
+				GroupBox {
+					VStack {
+						NavigationLink(destination: Text("Add note")) {
+							Image(systemName: "plus")
+								.font(.largeTitle)
+						}
+					}
+				}
+				.foregroundColor(.green)
 			}
-			
-			GroupBox() {
-				Text("Copy")
-			}
-			
-			GroupBox() {
-				Text("Remove")
-			}
-		}
 	}
 }
 

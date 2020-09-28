@@ -13,6 +13,11 @@ struct NoteList: View {
 	@State var coverNote: UserNote! = nil
 
 	var notes: Array<UserNote>
+	
+	func onTapGesture() -> Void {
+		fullCover.toggle()
+		coverNote = nil
+	}
     
 	var body: some View {
 		ScrollView(.vertical, showsIndicators: false) {
@@ -29,11 +34,7 @@ struct NoteList: View {
 			}
 		}
 		.fullScreenCover(isPresented: .constant(fullCover), content: {
-			NoteDetails(note: coverNote)
-				.onTapGesture {
-					fullCover.toggle()
-					coverNote = nil
-				}
+			NoteDetails(note: coverNote, onTap: onTapGesture)
 		})
 	}
 }

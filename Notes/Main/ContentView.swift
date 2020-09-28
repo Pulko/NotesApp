@@ -12,19 +12,23 @@ struct ContentView: View {
 	@ObservedObject var store: NoteStore
 
 	var body: some View {
-		VStack {
-			Spacer()
-			
-			HStack {
-				ToolsView()
-			}
-			.frame(height: 70)
-			
-			Spacer()
+		NavigationView {
+			VStack {
+				HStack {
+					Text("Notes")
+						.font(.title)
+					Spacer()
+					ToolsView()
+				}
+				.frame(maxWidth: 350.0)
 
-			HStack {
-				NoteList(notes: store.notes)
+				Spacer(minLength: 20)
+				
+				HStack {
+					NoteList(notes: store.notes)
+				}
 			}
+			.navigationBarHidden(true)
 		}
 	}
 }

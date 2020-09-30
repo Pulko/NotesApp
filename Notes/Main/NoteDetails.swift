@@ -30,14 +30,38 @@ struct NoteDetails: View {
 				Text(note.title)
 			}
 			.font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-			GroupBox {
-				contentFormatter(Text(note.content))
-					
+
+			ForEach(note.content, id: \.id) { (row: UserNoteContent) in
+				GroupBox {
+					contentFormatter(Text(row.row))
+				}
+				.frame(maxWidth: 320)
+				.rotation3DEffect(
+					Angle(
+						degrees: Double.random(in: 0..<5)),
+						axis: (
+							x: CGFloat.random(in: 0..<10),
+							y: CGFloat.random(in: 0..<10),
+							z: CGFloat.random(in: 0..<5)
+						)
+				)
 			}
-			.frame(maxWidth: 320)
-			.rotation3DEffect(Angle(degrees: 5), axis: (x: 10.0, y: 10.0, z: 5.0))
 			
 			Spacer(minLength: 60)
+			if !note.isDone {
+				Button("Complete") {
+					toggleNote(note.id)
+					onTap()
+				}
+				.padding(10.0)
+				.background(Color.green)
+				.foregroundColor(.white)
+				.font(.title2)
+				.cornerRadius(8.0)
+				.shadow(color: .green, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+			}
+			
+
 			Button("Back") {
 				onTap()
 			}

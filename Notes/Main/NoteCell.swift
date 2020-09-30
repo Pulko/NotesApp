@@ -23,12 +23,15 @@ struct NoteCell: View {
 					.aspectRatio(contentMode: .fit)
 					.frame(width: 30.0, height: 30.0)
 					.foregroundColor(.green)
+					.onTapGesture {
+						toggleNote(note.id)
+					}
 			}
 			.frame(width: 60.0, height: 60.0)
 			
 			VStack(alignment: .leading) {
 				formatNoteTitle(Text(note.title))
-				formatNoteContent(Text(note.content))
+				formatNoteContent(Text(note.content[0].row))
 					.frame(maxWidth: 250.0)
 					.lineLimit(1)
 					

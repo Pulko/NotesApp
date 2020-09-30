@@ -7,27 +7,40 @@
 
 import Foundation
 
+struct UserNoteContent {
+  var id: UUID = UUID()
+  var row: String
+}
+
 struct UserNote: Identifiable {
   var id: UUID = UUID()
   var title: String
-  var content: String
+  var content: Array<UserNoteContent>
   var isDone: Bool
 }
 
 var testData: Array<UserNote> = [
   UserNote(
     title: "Start new Swift app",
-    content: "Create Notes as a learning kick off",
+    content: [
+      UserNoteContent(row: "Create Notes as a learning kick off"),
+    ],
     isDone: true
   ),
   UserNote(
     title: "Custom navigations",
-    content: "Try to create custom navigations and views",
+    content: [
+      UserNoteContent(row: "Try to create custom navigations and views"),
+      UserNoteContent(row: "Deal with Store"),
+    ],
     isDone: false
   ),
   UserNote(
     title: "My idea",
-    content: "Think of my own idea to implement it with Swift",
+    content: [
+      UserNoteContent(row: "Think of my own idea to implement it with Swift"),
+      UserNoteContent(row: "Think of implementation"),
+    ],
     isDone: false
   )
 ]

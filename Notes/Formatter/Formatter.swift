@@ -17,6 +17,6 @@ let formatNoteTitle = {(_ view: Text) -> Text in
 
 let formatNoteContent = {(_ view: Text) -> Text in
 	view
-		.font(.subheadline)
+		.font(.body)
 		.foregroundColor(.secondary)
 }

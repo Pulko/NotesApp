@@ -29,6 +29,7 @@ struct NoteDetails: View {
 				
 				Text(note.title)
 			}
+			.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
 			.font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
 
 			ForEach(note.content, id: \.id) { (row: UserNoteContent) in
@@ -46,6 +47,7 @@ struct NoteDetails: View {
 						)
 				)
 			}
+			.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
 			
 			Spacer(minLength: 60)
 			if !note.isDone {
@@ -56,9 +58,9 @@ struct NoteDetails: View {
 				.padding(10.0)
 				.background(Color.green)
 				.foregroundColor(.white)
-				.font(.title2)
+				.font(.title)
 				.cornerRadius(8.0)
-				.shadow(color: .green, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+				.shadow(color: .green, radius: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
 			}
 			
 
@@ -82,6 +84,6 @@ func contentFormatter(_ view: Text) -> some View {
 struct NoteDetails_Previews: PreviewProvider {
 
 	static var previews: some View {
-		NoteDetails(note: noteStore.notes[0])
+		NoteDetails(note: noteStore.notes[1])
 	}
 }

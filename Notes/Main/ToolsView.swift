@@ -13,7 +13,7 @@ struct ToolsView: View {
 			HStack {
 				GroupBox {
 					VStack {
-						NavigationLink(destination: Text("Add note")) {
+						NavigationLink(destination: AddNote()) {
 							Image(systemName: "plus")
 								.font(.largeTitle)
 						}

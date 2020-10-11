@@ -32,6 +32,6 @@ let toggleNote = {(_ id: UUID) -> Void in
 	noteStore.toggleNote(id: id)
 }
 
-let addNote = {(_ note: UserNote) -> Void in
+let addNewNote = {(_ note: UserNote) -> Void in
 	noteStore.addNote(note: note)
 }

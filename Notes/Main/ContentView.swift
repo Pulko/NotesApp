@@ -20,6 +20,24 @@ struct ContentView: View {
 					Spacer()
 					ToolsView()
 				}
+
+				Spacer(minLength: 20)
+				
+				HStack {
+					NoteList(notes: store.notes)
+				}
+			}
+			.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+			.navigationBarHidden(true)
+			.navigationTitle("My Notes")
+			
+			VStack {
+				HStack {
+					Text("Notes")
+						.font(.title)
+					Spacer()
+					ToolsView()
+				}
 				.frame(maxWidth: 350.0)
 
 				Spacer(minLength: 20)
@@ -28,8 +46,8 @@ struct ContentView: View {
 					NoteList(notes: store.notes)
 				}
 			}
-			.navigationBarHidden(true)
 		}
+		
 	}
 }
 

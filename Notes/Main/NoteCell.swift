@@ -14,6 +14,14 @@ struct NoteCell: View {
 	func noteIcon() -> String {
 		note.isDone ? "largecircle.fill.circle" : "circle"
 	}
+	
+	func noteContent(_ content: Array<UserNoteContent>) -> Text {
+		if (content.isEmpty) {
+			return Text("")
+		} else {
+			return Text(content[0].row)
+		}
+	}
 
 	var body: some View {
 		HStack{
@@ -31,10 +39,9 @@ struct NoteCell: View {
 			
 			VStack(alignment: .leading) {
 				formatNoteTitle(Text(note.title))
-				formatNoteContent(Text(note.content[0].row))
+				formatNoteContent(noteContent(note.content))
 					.frame(maxWidth: 250.0)
 					.lineLimit(1)
-					
 			}
 		}
 	}

@@ -1,10 +1,3 @@
-//
-//  AddNote.swift
-//  Notes
-//
-//  Created by Фёдор Ткаченко on 30.09.20.
-//
-
 import Foundation
 import SwiftUI
 
@@ -14,26 +7,26 @@ struct ContentPlaceholder {
 }
 
 struct AddNote: View {
+  var onTap: (() -> Void)!
+  
   @State var title: String = ""
   @State var content_first: String = ""
   @State var content_second: String = ""
   @State var content_third: String = ""
   @State var error: Bool = false
   
-  @State var content_count: Int = 1
-  @State var contents: Array<ContentPlaceholder> = [
-    ContentPlaceholder(index: 1),
-  ]
+  @State var content_count: Int = 0
+  @State var contents: Array<ContentPlaceholder> = []
   
   func bindStateValue(_ index: Int) -> Binding<String> {
-    if (index == 0) {
+    if (index == 1) {
       return $content_first
     }
-    
-    if (index == 1) {
+
+    if (index == 2) {
       return $content_second
     }
-    
+
     return $content_third
   }
   
@@ -50,77 +43,96 @@ struct AddNote: View {
       let newNote: UserNote = UserNote(title: title, content: noteContent, isDone: false)
       
       addNewNote(newNote)
+      onTap()
     } else {
       error.toggle()
     }
   }
 
   var body: some View {
-    NavigationView {
-      VStack {
-        Form {
-          Section {
-            Text("Note Title")
-            TextField("Add a title", text: $title)
-              .onTapGesture {
-                error = false
+    VStack {
+      
+      BackButton()
+        .padding(/*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/)
+        .onTapGesture {
+          onTap()
+        }
+      
+      NavigationView {
+        VStack {
+          Form {
+            Section {
+              Text("Note Title")
+              TextField("Add a title", text: $title)
+                .onTapGesture {
+                  error = false
+                }
+            }
+            
+            ForEach(contents, id: \.id) { object in
+                Section {
+                  Text("Sub Content (\(object.index)/3)")
+                  TextField("Add a content", text: bindStateValue(object.index))
+                    .onTapGesture {
+                      error = false
+                    }
+                }
               }
-          }
-          
-          ForEach(contents, id: \.id) { object in
+            
+            if (content_count < 3) {
               Section {
-                Text("Note Content (\(object.index)/3)")
-                TextField("Add a content", text: bindStateValue(object.index))
-                  .onTapGesture {
-                    error = false
+                HStack {
+                  Spacer()
+                  Text("New sub content")
+                    .font(.body)
+                    .foregroundColor(.blue)
+                    
+                  Spacer()
+                }
+                .onTapGesture {
+                  if (content_count < 3) {
+                    content_count += 1
+                    contents.append(ContentPlaceholder(index: content_count))
                   }
+                }
               }
             }
-          
-          
-          if (content_count < 3) {
+            
             Section {
               HStack {
                 Spacer()
-                Image(systemName: "plus")
-                  .font(.body)
-                  .foregroundColor(.blue)
-                  .onTapGesture {
-                    if (content_count < 3) {
-                      content_count += 1
-                      contents.append(ContentPlaceholder(index: content_count))
-                    }
+                  if (!error) {
+                      Button("Save Note") {
+                        addNote()
+                      }
+                        .foregroundColor(.green)
+                  } else {
+                    Text("Note should at least have a title")
+                      .foregroundColor(.red)
                   }
                 Spacer()
               }
             }
           }
         }
-          
-          Section {
-            HStack {
-              Spacer()
-                if (!error) {
-                    Button("Save Note") {
-                      addNote()
-                    }
-                      .foregroundColor(.white)
-                } else {
-                  Text("Note should at least have a title")
-                    .foregroundColor(.red)
-                }
-              Spacer()
-            }
-          }
-          .frame(minHeight: 60.0)
-          .background(error ? Color.white : Color.green)
-
-        
+        .navigationBarHidden(true)
       }
-      .navigationBarHidden(true)
     }
   }
 }
+
+struct BackButton: View {
+  var body: some View {
+    HStack {
+      Text("Back")
+        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+      Spacer()
+    }
+    .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+  }
+}
+
+
 
 struct AddNote_Previews: PreviewProvider {
   static var previews: some View {

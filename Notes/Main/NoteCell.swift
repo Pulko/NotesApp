@@ -1,10 +1,3 @@
-//
-//  NoteCell.swift
-//  Notes
-//
-//  Created by Фёдор Ткаченко on 27.09.20.
-//
-
 import Foundation
 import SwiftUI
 
@@ -36,19 +29,26 @@ struct NoteCell: View {
 					}
 			}
 			.frame(width: 60.0, height: 60.0)
-			
 			VStack(alignment: .leading) {
 				formatNoteTitle(Text(note.title))
 				formatNoteContent(noteContent(note.content))
-					.frame(maxWidth: 250.0)
 					.lineLimit(1)
 			}
+			Spacer()
+			HStack {
+				Image(systemName: "trash")
+					.foregroundColor(.black)
+					.onTapGesture {
+						removeNote(note.id)
+					}
+			}
+			.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
 		}
 	}
 }
 
 struct NoteCell_Previews: PreviewProvider {
 	static var previews: some View {
-		NoteCell(note: noteStore.notes[0])
+		NoteCell(note: noteStore.notes[3])
 	}
 }

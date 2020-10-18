@@ -1,11 +1,5 @@
-//
-//  NotesApp.swift
-//  Notes
-//
-//  Created by Фёдор Ткаченко on 27.09.20.
-//
-
 import SwiftUI
+import CoreData
 
 @main
 struct NotesApp: App {

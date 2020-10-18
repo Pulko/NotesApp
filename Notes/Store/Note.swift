@@ -1,10 +1,3 @@
-//
-//  Note.swift
-//  Notes
-//
-//  Created by Фёдор Ткаченко on 27.09.20.
-//
-
 import Foundation
 
 struct UserNoteContent {
@@ -40,6 +33,15 @@ var testData: Array<UserNote> = [
     content: [
       UserNoteContent(row: "Think of my own idea to implement it with Swift"),
       UserNoteContent(row: "Think of implementation"),
+    ],
+    isDone: false
+  ),
+  UserNote(
+    title: "Add Core Data",
+    content: [
+      UserNoteContent(row: "Learn"),
+      UserNoteContent(row: "Implement"),
+      UserNoteContent(row: "Test"),
     ],
     isDone: false
   )

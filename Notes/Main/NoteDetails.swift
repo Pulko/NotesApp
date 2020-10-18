@@ -1,16 +1,8 @@
-//
-//  NoteDetails.swift
-//  Notes
-//
-//  Created by Фёдор Ткаченко on 27.09.20.
-//
-
 import Foundation
 import SwiftUI
 
 struct NoteDetails: View {
 	var note: UserNote
-	var onTap: (() -> Void)!
 	
 	func getNoteIcon() -> String {
 		note.isDone ? "largecircle.fill.circle" : "circle"
@@ -47,30 +39,23 @@ struct NoteDetails: View {
 						)
 				)
 			}
-			.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+			
 			
 			Spacer(minLength: 60)
-			if !note.isDone {
-				Button("Complete") {
-					toggleNote(note.id)
-					onTap()
-				}
-				.padding(10.0)
-				.background(Color.green)
-				.foregroundColor(.white)
-				.font(.title)
-				.cornerRadius(8.0)
-				.shadow(color: .green, radius: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
-			}
 			
-
-			Button("Back") {
-				onTap()
+			Button(note.isDone ? "Incomplete" : "Complete") {
+				toggleNote(note.id)
 			}
-			.frame(width: 150.0, height: 50.0)
-			.foregroundColor(Color.black)
+			.padding(10.0)
+			.background(note.isDone ? Color.red : Color.green)
+			.foregroundColor(.white)
+			.font(.title)
+			.cornerRadius(8.0)
+			.shadow(color: note.isDone ? .red : .green, radius: /*@START_MENU_TOKEN@*/4/*@END_MENU_TOKEN@*/)
+
 			Spacer(minLength: 100)
 		}
+		.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
 	}
 }
 
@@ -78,12 +63,12 @@ func contentFormatter(_ view: Text) -> some View {
 	view
 		.font(.subheadline)
 		.fontWeight(.semibold)
-		.padding(.all, 30.0)
+		.padding(.all, 10.0)
 }
 
 struct NoteDetails_Previews: PreviewProvider {
 
 	static var previews: some View {
-		NoteDetails(note: noteStore.notes[1])
+		NoteDetails(note: noteStore.notes[0])
 	}
 }

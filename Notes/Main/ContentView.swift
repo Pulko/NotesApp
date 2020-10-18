@@ -1,15 +1,13 @@
-//
-//  ContentView.swift
-//  Notes
-//
-//  Created by Фёдор Ткаченко on 27.09.20.
-//
-
 import SwiftUI
 import CoreData
 
 struct ContentView: View {
+	@State var fullCover: Bool = false
 	@ObservedObject var store: NoteStore
+	
+	func onTapGesture() -> Void {
+		fullCover.toggle()
+	}
 
 	var body: some View {
 		NavigationView {
@@ -19,18 +17,33 @@ struct ContentView: View {
 						.font(.title)
 					Spacer()
 					ToolsView()
+						.onTapGesture {
+							onTapGesture()
+						}
 				}
 
 				Spacer(minLength: 20)
 				
 				HStack {
-					NoteList(notes: store.notes)
+					if !store.notes.isEmpty {
+						NoteList(notes: store.notes)
+					} else {
+						VStack {
+							Spacer()
+							Text("Your notes list is empty :(")
+								.foregroundColor(.gray)
+							Spacer()
+						}
+					}
 				}
 			}
 			.padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
 			.navigationBarHidden(true)
 			.navigationTitle("My Notes")
-			
+			.fullScreenCover(isPresented: .constant(fullCover), content: {
+				AddNote(onTap: onTapGesture)
+			})
+
 			VStack {
 				HStack {
 					Text("Notes")

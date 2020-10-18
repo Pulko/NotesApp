@@ -1,10 +1,3 @@
-//
-//  Formatter.swift
-//  Notes
-//
-//  Created by Фёдор Ткаченко on 27.09.20.
-//
-
 import Foundation
 import SwiftUI
 

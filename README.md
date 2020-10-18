@@ -1,6 +1,3 @@
 # NotesApp
 
-Todo:
-
-- fullscreen cover for adding notes
-- navigation to view of note details
+Clear ToDo app, without Core Data implementation
